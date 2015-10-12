@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>Meow</title>
+
+</head>
+
+<body>
+  <h4>My favourite things</h4>
+  <form method="get" action="/">
+    <input type="text" name="item"  id="input-box"></input>
+    <input type="submit" id="submit-button"></input>
+  </form>
+  <ul id="favourites-list">
+
+  </ul>
+<script>
+  document.getElementById("submit-button").addEventListener('click', function(event) {
+    var input = document.getElementById("input-box").value;
+    var getFavouritesList = new XMLHttpRequest();
+    event.preventDefault();
+    console.log(input);
+    getFavouritesList.onreadystatechange = function() {
+
+      var responseArray = getFavouritesList.responseText.split(',')
+      console.log(getFavouritesList.responseText);
+      displayList(responseArray);
+  };
+  getFavouritesList.open('GET','/getposts/'+ input, true);
+  getFavouritesList.send();
+});
+function displayList (array) {
+  var listContainer = document.getElementById('favourites-list'),
+      growingList = '',
+      thisWord,
+      i;
+      for (i = 0; i < array.length; i++) {
+        thisWord = array[i];
+        growingList += '<li class=listElements>' +thisWord+ '</li>'
+      }
+      listContainer.innerHTML = growingList;
+
+}
+
+</script>
+
+</body>
+
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Weekend Project</title>
+</head>
+<body>
+<h1>Hello World!</h1>
+<h4>My favourite things</h4>
+</body>
+
+</html> -->

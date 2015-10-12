@@ -1,0 +1,22 @@
+{
+  "name": "rediswkend",
+  "version": "1.0.0",
+  "description": "weekend project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joshua-Ronan-Phillips/RedisWeekend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Joshua-Ronan-Phillips/RedisWeekend/issues"
+  },
+  "homepage": "https://github.com/Joshua-Ronan-Phillips/RedisWeekend#readme",
+  "dependencies": {
+    "redis": "^2.1.0"
+  }
+}
